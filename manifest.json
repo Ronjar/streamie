@@ -1,0 +1,29 @@
+{
+  "description": "Demonstrating webRequests",
+  "manifest_version": 2,
+  "name": "Streamie",
+  "version": "1.0",
+
+  "permissions": [
+    "webRequest",
+    "active_tab",
+    "<all_urls>"
+  ],
+
+  "browser_action": {
+    "default_icon": "icons/beasts-32.png",
+    "default_title": "Streamie",
+    "default_popup": "popup/main.html"
+  },
+
+  "content_scripts": [
+    {
+      "matches": ["*://*.hd-streams.org/*"],
+      "js": ["scripts/main.js"]
+    }
+  ],
+
+  "background": {
+    "scripts": ["scripts/background.js"]
+  }
+}
